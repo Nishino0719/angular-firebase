@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "gitpet-19aab"
+  },
+  "targets": {
+    "gitpet-19aab": {
+      "hosting": {
+        "angular-firebase": [
+          "gitpet-19aab"
+        ]
+      }
+    }
   }
 }
