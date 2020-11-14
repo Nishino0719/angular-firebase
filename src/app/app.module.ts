@@ -10,6 +10,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,8 @@ import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireFunctionsModule
-
+    AngularFireFunctionsModule,
+    AngularFireAuthModule,
   ],
   providers: [
     { provide: REGION, useValue: 'asia-northeast1' }
