@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from '@firebase/auth-types';
 import * as firebase from 'firebase/app';
@@ -13,22 +14,31 @@ export class AuthService {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {
     this.afUser$.subscribe(user => console.log(user));
   }
 
   // tslint:disable-next-line: typedef
-  login(): void  {
+  login(): void {
     this.afAuth.signInWithPopup(
       new firebase.default.auth.GithubAuthProvider()
-    );
-    this.router.navigateByUrl('create');
+    ).then(result => {
+      this.snackBar.open('ようこそGitPetへ!', null, {
+        duration: 2000
+      });
+      this.router.navigateByUrl('/create');
+    });
   }
 
   logout(): void {
-    this.afAuth.signOut();
-    this.router.navigateByUrl('/welcome');
+    this.afAuth.signOut().then(() => {
+      this.snackBar.open('ログアウトしました', null, {
+        duration: 2000
+      });
+      this.router.navigateByUrl('/welcome');
+    });
   }
 
 
