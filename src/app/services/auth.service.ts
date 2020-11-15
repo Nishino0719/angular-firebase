@@ -16,14 +16,15 @@ export class AuthService {
     this.afUser$.subscribe(user => console.log(user));
   }
 
-  login() {
+  // tslint:disable-next-line: typedef
+  login(): void  {
     this.afAuth.signInWithPopup(
       new firebase.default.auth.GithubAuthProvider()
     );
   }
 
-  logout() {
-
+  logout(): void {
+    this.afAuth.signOut();
   }
 
 
