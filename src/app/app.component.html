@@ -2,6 +2,7 @@
 
 
 <footer>
+  <button *ngIf="user$ | async" (click)="logout()">ログアウト</button>
   <p>
     &copy; GitPet
   </p>
