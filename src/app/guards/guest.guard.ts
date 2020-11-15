@@ -36,7 +36,7 @@ export class GuestGuard implements CanActivate, CanLoad {
       take(1),
         tap((isGuest) => {
           if (!isGuest) {
-            this.router.navigateByUrl('/welcome');
+            this.router.navigateByUrl('/');
           }}),
     );
   }

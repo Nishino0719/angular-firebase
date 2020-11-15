@@ -1,8 +1,11 @@
-footer{
+footer {
   text-align: center;
+  margin-top: 16px;
+  padding-top: 40px;
+  border-top: 1px solid rgba($color:black, $alpha: .12);
 }
 
-p{
+p {
   font-size: 12px;
   text-align: center;
   color: rgba($color:black, $alpha: .6);
